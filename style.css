@@ -1,0 +1,324 @@
+/* Basic settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+/* Custom properties */
+
+:root {
+    --background: rgb(252, 248, 255);
+    --foreground: rgb(36, 36, 40);
+    --near: #333;
+    --far: #ddd;
+    --edge-upper: #aaa;
+    --edge-lower: #444;
+    --shadow: #aaa;
+    --primary: midnightblue;
+    --secondary: purple;
+    --warning: maroon;
+}
+
+/* Colour theming */
+
+.theme--dark {
+    --background: rgb(36, 36, 40);
+    --foreground: rgb(252, 248, 255);
+    --near: #ddd;
+    --far: #333;
+    --edge-upper: #aaa;
+    --edge-lower: #444;
+    --shadow: rgb(36, 36, 40);
+    --primary: blue;
+    --secondary: pink;
+    --warning: orangered;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+    :root {
+        --background: rgb(36, 36, 40);
+        --foreground: rgb(252, 248, 255);
+        --near: #ddd;
+        --far: #333;
+        --edge-upper: #aaa;
+        --edge-lower: #444;
+        --shadow: rgb(36, 36, 40);
+        --primary: blue;
+        --secondary: pink;
+        --warning: orangered;
+    }
+}
+
+/* Vue components */
+
+/* - App */
+
+#app a.router-link-exact-active {
+    color: royalblue;
+}
+
+.loader {
+    height: calc(100vh - 8.5rem);
+    padding-bottom: 5vh;
+}
+
+.loader > div {
+    width: 2rem;
+    height: 2rem;
+    background: var(--foreground);
+    border-radius: 3px;
+    animation: pulse 1500ms ease-out infinite;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* - Frame */
+
+.frame {
+    min-height: calc(100vh - 8.5rem);
+}
+
+/* - FrameInput */
+
+.frame-input input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* - FrameEntry */
+
+.frame-entry {
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+}
+
+.frame-entry h1 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.frame-entry section > p:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.frame-entry section, section > p {
+    margin-top: 0.5rem;
+}
+
+.frame-entry p {
+    line-height: 1.5;
+}
+
+.frame-entry button {
+    padding: 0rem 0.25rem;
+}
+
+/* - FrameIndex */
+
+.frame-index {
+    margin-top: 0.75rem;
+}
+
+.frame-index p {
+    line-height: 1.25;
+    padding: 0.75rem;
+}
+
+.frame-index ul {
+    padding: 0.75rem;
+    padding-left: 1.75rem;
+}
+
+/* Container classes */
+
+.cont--flex {
+    display: flex;
+}
+
+.cont--flex--col {
+    flex-direction: column;
+}
+
+.cont--flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Framing classes */
+
+.border--thin {
+    border: 1px solid var(--foreground);
+    border-radius: 3px;
+}
+
+/* Visibility classes */
+
+.visually-hidden {
+    height: 0;
+    width: 0;
+    clip: rect(0 0 0 0);
+    font-size: 0.01rem;
+    opacity: 0;
+}
+
+/* Content classes */
+
+.text--block {
+    display: block;
+}
+
+.text--vsmall {
+    font-size: 0.6rem;
+}
+
+.text--left {
+    text-align: left;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.text--right {
+    text-align: right;
+}
+
+.text--warning {
+    color: var(--warning);
+}
+
+/* Content elements */
+
+code {
+    padding: 0.4rem 0.6rem;
+    background-color: var(--far);
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+/* Minor elements */
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--secondary);
+}
+
+li {
+    list-style: square;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+input,
+textarea,
+button {
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid var(--edge-upper);
+    border-radius: 3px;
+}
+
+input,
+textarea {
+    border-top-color: var(--edge-lower);
+    border-left-color: var(--edge-lower);
+    box-shadow: inset 1px 1px 2px var(--shadow);
+}
+
+button {
+    background-color: inherit;
+    color: inherit;
+    border-right-color: var(--edge-lower);
+    border-bottom-color: var(--edge-lower);
+    box-shadow: 1px 1px 2px var(--shadow);
+}
+
+button:active, button[aria-pressed="true"] {
+    color: var(--secondary);
+    border-top-color: var(--edge-lower);
+    border-left-color: var(--edge-lower);
+    border-right-color: var(--edge-upper);
+    border-bottom-color: var(--edge-upper);
+    box-shadow: inset 1px 1px 2px var(--shadow);
+}
+
+/* Major elements */
+
+/* - body */
+
+body {
+    min-height: 100vh;
+    background-color: var(--background);
+    font-family: "Montserrat", sans-serif;
+    color: var(--foreground);
+}
+
+/* - header */
+
+header {
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header h1 a,
+header h1 a:visited {
+    color: var(--foreground);
+}
+
+/* - main */
+
+main {
+    flex: 1;
+    height: 100%;
+    padding: 2rem;
+}
+
+/* - footer */
+
+footer {
+    flex: 0;
+    padding: 1.5rem;
+}
+
+footer p a,
+footer p a:visited {
+    color: var(--foreground);
+}
+
+/* Media queries */
+
+@media screen and (min-width: 400px) {
+
+    main {
+        width: 400px;
+        margin: 0 auto;
+    }
+}
