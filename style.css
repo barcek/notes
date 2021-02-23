@@ -16,11 +16,12 @@
 :root {
     --background: rgb(252, 248, 255);
     --foreground: rgb(36, 36, 40);
-    --near: #333;
-    --far: #ddd;
+    --near: #423342;
+    --far: #e2dde2;
     --edge-upper: #aaa;
     --edge-lower: #444;
     --shadow: #aaa;
+    --max: white;
     --primary: midnightblue;
     --secondary: purple;
     --warning: maroon;
@@ -31,12 +32,13 @@
 .theme--dark {
     --background: rgb(36, 36, 40);
     --foreground: rgb(252, 248, 255);
-    --near: #ddd;
-    --far: #333;
+    --near: #e4dde4;
+    --far: #393339;
     --edge-upper: #aaa;
     --edge-lower: #444;
     --shadow: rgb(36, 36, 40);
-    --primary: blue;
+    --max: black;
+    --primary: violet;
     --secondary: pink;
     --warning: orangered;
 }
@@ -46,108 +48,16 @@
     :root {
         --background: rgb(36, 36, 40);
         --foreground: rgb(252, 248, 255);
-        --near: #ddd;
-        --far: #333;
+        --near: #e4dde4;
+        --far: #393339;
         --edge-upper: #aaa;
         --edge-lower: #444;
         --shadow: rgb(36, 36, 40);
-        --primary: blue;
+        --max: black;
+        --primary: violet;
         --secondary: pink;
         --warning: orangered;
     }
-}
-
-/* Vue components */
-
-/* - App */
-
-#app a.router-link-exact-active {
-    color: royalblue;
-}
-
-.loader {
-    height: calc(100vh - 8.5rem);
-    padding-bottom: 5vh;
-}
-
-.loader > div {
-    width: 2rem;
-    height: 2rem;
-    background: var(--foreground);
-    border-radius: 3px;
-    animation: pulse 1500ms ease-out infinite;
-}
-
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-/* - Frame */
-
-.frame {
-    min-height: calc(100vh - 8.5rem);
-}
-
-/* - FrameInput */
-
-.frame-input input {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-/* - FrameEntry */
-
-.frame-entry {
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-
-.frame-entry h1 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.frame-entry section > p:not(:last-child) {
-    margin-bottom: 0.75rem;
-}
-
-.frame-entry section, section > p {
-    margin-top: 0.75rem;
-}
-
-.frame-entry p {
-    line-height: 1.5;
-}
-
-.frame-entry button {
-    padding: 0rem 0.25rem;
-}
-
-.frame-entry ul {
-    padding-left: 1rem;
-}
-
-/* - FrameIndex */
-
-.frame-index {
-    margin-top: 0.75rem;
-}
-
-.frame-index p {
-    line-height: 1.25;
-    padding: 0.75rem;
-}
-
-.frame-index ul {
-    padding: 0.75rem;
-    padding-left: 1.75rem;
 }
 
 /* Container classes */
@@ -168,7 +78,7 @@
 /* Framing classes */
 
 .border--thin {
-    border: 1px solid var(--foreground);
+    border: 1px solid var(--edge-upper);
     border-radius: 3px;
 }
 
@@ -188,8 +98,13 @@
     display: block;
 }
 
+.text--mono {
+    font-family: mono;
+    font-size: 0.9rem;
+}
+
 .text--vsmall {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
 }
 
 .text--left {
@@ -218,14 +133,14 @@ code {
 }
 
 code.text--block {
-    padding: 0.4rem 0.6rem 0.5rem 0.6rem;
+    padding: 0.5rem 0.6rem 0.4rem 0.6rem;
+    line-height: 1.25rem;
     white-space: nowrap;
     overflow-X: auto;
 }
 
 code.text--block > span.text--block {
-    padding-top: 0.2rem;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.2rem;
 }
 
 /* Minor elements */
@@ -260,6 +175,8 @@ button {
 
 input,
 textarea {
+    background: var(--max);
+    color: inherit;
     border-top-color: var(--edge-lower);
     border-left-color: var(--edge-lower);
     box-shadow: inset 1px 1px 2px var(--shadow);
@@ -329,12 +246,113 @@ footer p a:visited {
     color: var(--foreground);
 }
 
+/* Vue components */
+
+/* - App */
+
+#app a.router-link-exact-active {
+    color: var(--foreground);
+}
+
+.loader {
+    height: calc(100vh - 8.5rem);
+    padding-bottom: 5vh;
+}
+
+.loader > div {
+    width: 2rem;
+    height: 2rem;
+    background: var(--foreground);
+    border-radius: 3px;
+    animation: pulse 1500ms ease-out infinite;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* - Frame */
+
+.frame {
+    min-height: calc(100vh - 8.5rem);
+}
+
+/* - FrameInput */
+
+.frame-input input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* - FrameEntry */
+
+.frame-entry {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+}
+
+.frame-entry h1 {
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+}
+
+.frame-entry section, section > p {
+    margin-top: 0.75rem;
+}
+
+.frame-entry section > p:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.frame-entry p {
+    line-height: 1.5;
+}
+
+.frame-entry section > code.text--block:not(:last-child) {
+    margin: 1rem 0;
+}
+
+.frame-entry button {
+    padding: 0rem 0.25rem;
+}
+
+.frame-entry ul {
+    padding-left: 1rem;
+}
+
+/* - FrameIndex */
+
+.frame-index {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.frame-index p {
+    padding: 1rem;
+}
+
+.frame-index li {
+    padding: 0.25rem 0;
+}
+
+.frame-index ul {
+    padding: 0.75rem;
+    padding-left: 1.75rem;
+}
+
 /* Media queries */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 475px) {
 
     main {
-        width: 500px;
+        width: 475px;
         margin: 0 auto;
     }
 }
