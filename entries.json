@@ -1,7 +1,8 @@
 [
     {
         "name": "Up & running",
-        "date": "00.00.00",
+        "date": "",
+        "meta": "start",
         "body": "<p>Demo material only for now...</p>"
     },
     {
