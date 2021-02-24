@@ -286,9 +286,31 @@ footer p a:visited {
 
 /* - FrameInput */
 
-.frame-input input {
-    width: 100%;
+.frame-input {
     margin-bottom: 1rem;
+}
+
+.frame-input > input {
+    width: calc(100% - 2.85rem);
+    margin-right: 0.5rem;
+}
+
+.frame-input > button {
+    width: 2.3rem;
+    height: 2.3rem;
+    padding: 0.6rem;
+}
+
+.frame-input > button > svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke: var(--near);
+}
+
+.frame-input > button:active > svg {
+    stroke: var(--secondary);
 }
 
 /* - FrameEntry */
@@ -338,13 +360,13 @@ footer p a:visited {
     padding: 1rem;
 }
 
-.frame-index li {
-    padding: 0.25rem 0;
-}
-
 .frame-index ul {
     padding: 0.75rem;
-    padding-left: 1.75rem;
+    padding-left: 2.5rem;
+}
+
+.frame-index li {
+    padding: 0.25rem 0;
 }
 
 /* Media queries */
