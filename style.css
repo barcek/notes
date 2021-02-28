@@ -22,9 +22,11 @@
     --edge-lower: #444;
     --shadow: #aaa;
     --max: white;
-    --primary: blue;
-    --secondary: purple;
-    --warning: maroon;
+    --primary: #408;
+    --secondary: #714;
+    --primary-earth: #552;
+    --secondary-earth: #642;
+    --warning: #a20;
 }
 
 /* Colour theming */
@@ -119,13 +121,22 @@
     text-align: right;
 }
 
+.text--primary {
+    color: var(--primary);
+}
+
+.text--secondary {
+    color: var(--secondary);
+}
+
 .text--warning {
     color: var(--warning);
 }
 
 /* Content elements */
 
-code {
+code,
+kbd {
     padding: 0.1rem 0.3rem;
     background-color: var(--far);
     border-radius: 3px;
@@ -141,6 +152,12 @@ code.text--block {
 
 code.text--block > span.text--block {
     padding-bottom: 0.2rem;
+}
+
+kbd {
+    border: 1px solid var(--edge-upper);
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px var(--shadow);
 }
 
 /* Minor elements */
@@ -224,7 +241,7 @@ header h1 {
 
 header h1 a,
 header h1 a:visited {
-    color: var(--foreground);
+    color: var(--edge-lower);
 }
 
 /* - main */
@@ -268,7 +285,7 @@ body::before {
 .loader > div {
     width: 2rem;
     height: 2rem;
-    background: var(--foreground);
+    background: var(--edge-upper);
     border-radius: 3px;
     animation: pulse 1500ms ease-out infinite;
 }
@@ -318,7 +335,7 @@ body::before {
     height: 100%;
     stroke-width: 1;
     stroke-linecap: round;
-    stroke: var(--near);
+    stroke: var(--edge-lower);
 }
 
 .frame-input > button:active > svg {
