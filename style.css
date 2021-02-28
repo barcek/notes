@@ -251,6 +251,11 @@ footer p a:visited {
 
 /* - App */
 
+body::before {
+    content: "1-column";
+    display: none;
+}
+
 #app a.router-link-exact-active {
     color: var(--foreground);
 }
@@ -393,6 +398,11 @@ footer p a:visited {
 /* Media queries */
 
 @media screen and (min-width: calc(700px + 6rem)) {
+
+    body::before {
+        content: "2-column";
+        display: none;
+    }
 
     .frame {
         grid-template-columns: 1fr 1fr;
