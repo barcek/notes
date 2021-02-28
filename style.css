@@ -22,7 +22,7 @@
     --edge-lower: #444;
     --shadow: #aaa;
     --max: white;
-    --primary: midnightblue;
+    --primary: blue;
     --secondary: purple;
     --warning: maroon;
 }
@@ -190,7 +190,8 @@ button {
     box-shadow: 1px 1px 2px var(--shadow);
 }
 
-button:active, button[aria-pressed="true"] {
+button:active,
+button[aria-pressed="true"] {
     color: var(--secondary);
     border-top-color: var(--edge-lower);
     border-left-color: var(--edge-lower);
@@ -281,13 +282,18 @@ footer p a:visited {
 /* - Frame */
 
 .frame {
+    display: grid;
     min-height: calc(100vh - 8.5rem);
+    justify-content: center;
+    grid-gap: 1rem;
+    grid-template-columns: minmax(300px, 475px);
+    grid-template-rows: max-content;
 }
 
 /* - FrameInput */
 
 .frame-input {
-    margin-bottom: 1rem;
+    height: max-content;
 }
 
 .frame-input > input {
@@ -317,7 +323,7 @@ footer p a:visited {
 /* - FrameEntry */
 
 .frame-entry {
-    margin-bottom: 1rem;
+    height: max-content;
     padding: 1.5rem;
 }
 
@@ -353,7 +359,7 @@ footer p a:visited {
 /* - FrameIndex */
 
 .frame-index {
-    margin-top: 0.75rem;
+    height: max-content;
     font-size: 0.9rem;
 }
 
@@ -386,10 +392,27 @@ footer p a:visited {
 
 /* Media queries */
 
-@media screen and (min-width: 475px) {
+@media screen and (min-width: calc(700px + 6rem)) {
 
-    main {
-        width: 475px;
-        margin: 0 auto;
+    .frame {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content 1fr;
+    }
+
+    .frame-index {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .frame-entry {
+        grid-column: 2 / 3;
+        grid-row: 1 / span all;
+    }
+}
+
+@media screen and (min-width: calc(950px + 6rem)) {
+
+    .frame {
+        grid-template-columns: 475px 475px;
     }
 }
