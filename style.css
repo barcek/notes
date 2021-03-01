@@ -17,7 +17,7 @@
     --background: rgb(252, 248, 255);
     --foreground: rgb(36, 36, 40);
     --near: #423342;
-    --far: #e2dde2;
+    --far: #f2eef2;
     --edge-upper: #aaa;
     --edge-lower: #555;
     --shadow: #aaa;
@@ -85,7 +85,7 @@
 
 .border--thin {
     border: 1px solid var(--edge-upper);
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 /* Visibility classes */
@@ -98,7 +98,7 @@
     opacity: 0;
 }
 
-/* Content classes */
+/* Text classes */
 
 .text--block {
     display: block;
@@ -136,6 +136,8 @@
 .text--warning {
     color: var(--warning);
 }
+
+/* Area classes */
 
 .area--primary {
     background-color: var(--primary);
@@ -363,7 +365,7 @@ body::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    transition: 200ms ease;
+    transition: 150ms 100ms ease;
 }
 
 /* - FrameInput */
@@ -374,9 +376,9 @@ body::before {
 }
 
 .frame-input > input {
-    width: calc(100% - 5.6rem);
+    width: calc(100% - 6.1rem);
     border-radius: 6px 3px 3px 6px;
-    transition: 200ms ease;
+    transition: 150ms 100ms ease;
 }
 
 .frame-input > input:focus {
@@ -400,7 +402,7 @@ body::before {
 .frame-input > button {
     width: 2.3rem;
     height: 2.3rem;
-    margin-left: 0.5rem;
+    margin-left: 0.75rem;
     padding: 0.55rem;
     font-size: 1rem;
 }
@@ -432,7 +434,7 @@ body::before {
     height: max-content;
     padding: 1.5rem;
     border-radius: 6px 6px 3px 3px;
-    transition: 200ms ease;
+    transition: 150ms 100ms ease;
 }
 
 .frame-entry .filter--dot {
@@ -453,7 +455,7 @@ body::before {
 }
 
 .frame-entry h1 {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
 
@@ -505,7 +507,7 @@ body::before {
 /* - transitions */
 
 .v-enter-active {
-    transition: opacity 300ms ease;
+    transition: opacity 150ms ease;
 }
 
 .v-enter {
@@ -530,6 +532,10 @@ body::before {
         grid-template-rows: max-content 1fr;
     }
 
+    .frame-input > button:last-of-type {
+        border-radius: 3px 3px 3px 3px;
+    }
+
     .frame-index {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
@@ -538,6 +544,7 @@ body::before {
     .frame-entry {
         grid-column: 2 / 3;
         grid-row: 1 / span all;
+        border-radius: 3px 6px 18px 3px;
     }
 }
 
