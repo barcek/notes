@@ -85,7 +85,7 @@
 
 .border--thin {
     border: 1px solid var(--edge-upper);
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 /* Visibility classes */
@@ -135,6 +135,14 @@
 
 .text--warning {
     color: var(--warning);
+}
+
+.area--primary {
+    background-color: var(--primary);
+}
+
+.area--secondary {
+    background-color: var(--secondary);
 }
 
 /* Content elements */
@@ -344,19 +352,49 @@ body::before {
     display: grid;
     min-height: calc(100vh - 8.5rem);
     justify-content: center;
-    grid-gap: 1rem;
+    grid-gap: 1.25rem;
     grid-template-columns: minmax(300px, 475px);
     grid-template-rows: max-content;
+}
+
+.filter--dot {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: 200ms ease;
 }
 
 /* - FrameInput */
 
 .frame-input {
+    position: relative;
     height: max-content;
 }
 
 .frame-input > input {
     width: calc(100% - 5.6rem);
+    border-radius: 6px 3px 3px 6px;
+    transition: 200ms ease;
+}
+
+.frame-input > input:focus {
+    outline: none;
+    border-radius: 12px 3px 3px 6px;
+}
+
+.frame-input .filter--dot {
+    top: -8px;
+    left: -8px;
+}
+
+.frame-input > input:focus ~ .filter--dot {
+    top: -20px;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
 }
 
 .frame-input > button {
@@ -365,6 +403,14 @@ body::before {
     margin-left: 0.5rem;
     padding: 0.55rem;
     font-size: 1rem;
+}
+
+.frame-input > button:first-of-type {
+    font-weight: bold;
+}
+
+.frame-input > button:last-of-type {
+    border-radius: 3px 3px 6px 3px;
 }
 
 .frame-input > button > svg {
@@ -382,8 +428,28 @@ body::before {
 /* - FrameEntry */
 
 .frame-entry {
+    position: relative;
     height: max-content;
     padding: 1.5rem;
+    border-radius: 6px 6px 3px 3px;
+    transition: 200ms ease;
+}
+
+.frame-entry .filter--dot {
+    top: -4px;
+    right: -4px;
+}
+
+.frame-entry:focus-within {
+    border-radius: 6px 24px 3px 3px;
+}
+
+.frame-entry:focus-within .filter--dot {
+    top: -16px;
+    right: -16px;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
 }
 
 .frame-entry h1 {
@@ -420,6 +486,7 @@ body::before {
 .frame-index {
     height: max-content;
     font-size: 0.9rem;
+    border-radius: 6px 3px 3px 18px;
 }
 
 .frame-index p {
@@ -427,8 +494,8 @@ body::before {
 }
 
 .frame-index ul {
-    padding: 0.75rem;
-    padding-left: 2.5rem;
+    padding: 1rem;
+    padding-left: 2.25rem;
 }
 
 .frame-index li {
@@ -478,5 +545,17 @@ body::before {
 
     .frame {
         grid-template-columns: 475px 475px;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+
+    * {
+        transition: none;
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
     }
 }
