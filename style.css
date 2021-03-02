@@ -33,12 +33,12 @@
 
 .theme--dark {
     --background: rgb(36, 36, 40);
-    --foreground: rgb(252, 248, 255);
+    --foreground: rgb(208, 204, 212);
     --near: #e4dde4;
     --far: #393339;
-    --edge-upper: #aaa;
-    --edge-lower: #777;
-    --shadow: rgb(36, 36, 40);
+    --edge-upper: #ccc;
+    --edge-lower: #999;
+    --shadow: rgb(12, 12, 16);
     --max: black;
     --primary: #99d;
     --secondary: #c9c;
@@ -51,12 +51,12 @@
 
     :root {
         --background: rgb(36, 36, 40);
-        --foreground: rgb(252, 248, 255);
+        --foreground: rgb(208, 204, 212);
         --near: #e4dde4;
         --far: #393339;
-        --edge-upper: #aaa;
-        --edge-lower: #777;
-        --shadow: rgb(36, 36, 40);
+        --edge-upper: #ccc;
+        --edge-lower: #999;
+        --shadow: rgb(12, 12, 16);
         --max: black;
         --primary: #99d;
         --secondary: #c9c;
@@ -78,6 +78,11 @@
 
 .cont--flex--center {
     justify-content: center;
+    align-items: center;
+}
+
+.cont--flex--between {
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -266,19 +271,36 @@ body {
 /* - header */
 
 header {
-    width: max-content;
     padding: 1rem;
 }
 
 header svg {
     display: inline-block;
-    height: 2rem;
-    width: 2rem;
     stroke: var(--edge-lower);
     stroke-width: 1.15;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
+}
+
+header a svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+header .theme-toggle {
+    height: 1.5rem;
+    width: 1.5rem;
+    stroke-width: 1.4;
+    stroke-dasharray: 48;
+    stroke-dashoffset: -12;
+    fill: var(--background);
+    transition: 500ms ease;
+}
+
+body.theme--dark .theme-toggle {
+    stroke-dashoffset: 4;
+    fill: var(--edge-lower);
 }
 
 header h1 {
@@ -512,6 +534,10 @@ body::before {
 
 .v-enter {
     opacity: 0;
+}
+
+.v-leave-active {
+    transition: opacity 0ms ease;
 }
 
 .v-leave {
