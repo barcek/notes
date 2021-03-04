@@ -22,11 +22,11 @@
     --edge-lower: #555;
     --shadow: #aaa;
     --max: white;
-    --primary: #408;
+    --primary: #417;
     --secondary: #714;
-    --primary-earth: #552;
-    --secondary-earth: #642;
-    --warning: #a20;
+    --primary-earth: #156;
+    --secondary-earth: #651;
+    --warning: #912;
 }
 
 /* Colour theming */
@@ -42,9 +42,9 @@
     --max: black;
     --primary: #99d;
     --secondary: #c9c;
-    --primary-earth: #bca;
-    --secondary-earth: #db9;
-    --warning: #fa7;
+    --primary-earth: #8bc;
+    --secondary-earth: #cb8;
+    --warning: #f89;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -60,9 +60,9 @@
         --max: black;
         --primary: #99d;
         --secondary: #c9c;
-        --primary-earth: #bca;
-        --secondary-earth: #db9;
-        --warning: #fa7;
+        --primary-earth: #8bc;
+        --secondary-earth: #cb8;
+        --warning: #f89;
     }
 }
 
@@ -165,12 +165,12 @@ kbd {
 code.text--block {
     padding: 0.5rem 0.6rem 0.4rem 0.6rem;
     line-height: 1.25rem;
-    white-space: nowrap;
+    white-space: pre;
     overflow-X: auto;
 }
 
 code.text--block > span.text--block {
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.3rem;
 }
 
 .code--dl {
@@ -193,8 +193,13 @@ code.text--block > span.text--block {
     color: var(--warning);
 }
 
+.break--semi {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
 kbd {
-    border: 1px solid var(--edge-upper);
+    border: 1px solid var(--edge-lower);
     border-radius: 3px;
     box-shadow: 1px 1px 2px var(--shadow);
 }
@@ -481,6 +486,11 @@ body::before {
     font-size: 1.1rem;
 }
 
+.frame-entry section h2 {
+    margin: 1.25rem 0rem 1rem 0rem;
+    font-size: 1rem;
+}
+
 .frame-entry section, section > p {
     margin-top: 0.75rem;
 }
@@ -503,6 +513,7 @@ body::before {
 
 .frame-entry ul {
     padding-left: 1rem;
+    line-height: 1.5;
 }
 
 /* - FrameIndex */
