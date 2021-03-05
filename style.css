@@ -521,20 +521,51 @@ body::before {
 .frame-index {
     height: max-content;
     font-size: 0.9rem;
+}
+
+.frame-index > p,
+.frame-index > ul {
+    padding: 1rem;
     border-radius: 6px 3px 3px 18px;
 }
 
-.frame-index p {
-    padding: 1rem;
-}
-
-.frame-index ul {
-    padding: 1rem;
+.frame-index > ul {
     padding-left: 2.25rem;
 }
 
-.frame-index li {
+.frame-index > ul > li {
     padding: 0.25rem 0;
+}
+
+/* - FrameBatch */
+
+.frame-batch {
+    margin-bottom: 0.5rem;
+}
+
+.frame-batch li {
+    display: inline-block;
+    margin: 0rem 0.25rem 0.25rem 0rem;
+    padding: 0.25rem 0.5rem;
+    list-style: none;
+    font-size: 0.85rem;
+    box-shadow: 1px 1px 2px var(--far);
+    cursor: pointer;
+}
+
+.frame-batch li:hover > svg,
+.frame-batch li:focus-within > svg {
+    stroke: var(--secondary);
+}
+
+.frame-batch li svg {
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-left: 0.25rem;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke: var(--edge-lower);
+    pointer-events: none;
 }
 
 /* - transitions */
@@ -581,8 +612,22 @@ body::before {
     .frame-entry {
         grid-column: 2 / 3;
         grid-row: 1 / span all;
-        border-radius: 3px 6px 18px 3px;
+        border-radius: 6px 6px 18px 6px;
     }
+
+    .frame-batch ul {
+        justify-content: end;
+    }
+
+    .frame-batch li {
+        margin: 0rem 0rem 0.25rem 0.25rem;
+    }
+
+    .frame-index > p,
+    .frame-index > ul {
+        border-radius: 6px 6px 6px 18px;
+    }
+
 }
 
 @media screen and (min-width: calc(950px + 6rem)) {
