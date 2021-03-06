@@ -1,4 +1,4 @@
-# ./notes
+# notes
 
 Knowledge gained being passed on.
 
