@@ -547,12 +547,12 @@ body::before {
     padding: 0.25rem 0 0 0;
 }
 
-.frame-index__preview {
+.frame-index-entry {
     display: inline-block;
     position: relative;
 }
 
-.frame-index__preview > div {
+.frame-index-entry > div {
     position: absolute;
     top: 0;
     width: 100%;
@@ -561,39 +561,39 @@ body::before {
     z-index: 1;
 }
 
-.frame-index__preview > h1 {
+.frame-index-entry > h1 {
     margin-bottom: 0.5rem;
     font-weight: 400;
     font-size: 1rem;
 }
 
-.frame-index__preview > h2 {
+.frame-index-entry > section > h2 {
     margin: 0.5rem 0rem;
     font-size: 0.9rem;
 }
 
-.frame-index__preview > p {
+.frame-index-entry > section > p {
     margin-top: 0.35rem;
     font-size: 0.8rem;
     line-height: 1.5;
 }
 
-.frame-index__preview > p:not(:last-child) {
+.frame-index-entry > section > p:not(:last-child) {
     margin-bottom: 0.35rem;
 }
 
-.frame-index__preview > code.text--block:not(:last-child) {
+.frame-index-entry > section > code.text--block:not(:last-child) {
     margin: 0.75rem 0;
 }
 
-.frame-index__preview button {
+.frame-index-entry > section button {
     padding: 0rem;
     border: none;
     box-shadow: none;
     pointer-events: none;
 }
 
-.frame-index__preview > ul {
+.frame-index-entry > section > ul {
     padding-left: 0.75rem;
     line-height: 1.5;
 }
@@ -620,6 +620,14 @@ body::before {
 
 .frame-index a.router-link-exact-active > article > div {
     cursor: default;
+}
+
+.frame-index a:hover > article > h1 {
+    text-decoration: underline;
+}
+
+.frame-index a.router-link-exact-active:hover > article > h1 {
+    text-decoration: none;
 }
 
 /* - FrameBatch */
@@ -698,6 +706,10 @@ body::before {
         grid-column: 2 / 3;
         grid-row: 1 / span all;
         border-radius: 6px 6px 18px 6px;
+    }
+
+    .frame-entry:focus-within {
+        border-radius: 6px 24px 18px 6px;
     }
 
     .frame-batch ul {
