@@ -525,16 +525,101 @@ body::before {
 
 .frame-index > p,
 .frame-index > ul {
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: 6px 3px 3px 18px;
 }
 
 .frame-index > ul {
-    padding-left: 2.25rem;
+    padding-left: 1.25rem;
 }
 
 .frame-index > ul > li {
     padding: 0.25rem 0;
+    max-height: 7.5rem;
+    overflow: hidden;
+}
+
+.frame-index > ul > li:first-child {
+    padding: 0 0 0.25rem 0;
+}
+
+.frame-index > ul > li:last-child {
+    padding: 0.25rem 0 0 0;
+}
+
+.frame-index__preview {
+    display: inline-block;
+    position: relative;
+}
+
+.frame-index__preview > div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 7.5rem;
+    background-image: linear-gradient(180deg, transparent 50%, var(--background) 95%);
+    z-index: 1;
+}
+
+.frame-index__preview > h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.frame-index__preview > h2 {
+    margin: 0.5rem 0rem;
+    font-size: 0.9rem;
+}
+
+.frame-index__preview > p {
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.frame-index__preview > p:not(:last-child) {
+    margin-bottom: 0.35rem;
+}
+
+.frame-index__preview > code.text--block:not(:last-child) {
+    margin: 0.75rem 0;
+}
+
+.frame-index__preview button {
+    padding: 0rem;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.frame-index__preview > ul {
+    padding-left: 0.75rem;
+    line-height: 1.5;
+}
+
+.frame-index a {
+    color: inherit;
+}
+
+.frame-index a:visited {
+    color: inherit;
+}
+
+.frame-index a h1 {
+    color: var(--primary);
+}
+
+.frame-index a:visited h1 {
+    color: var(--secondary);
+}
+
+.frame-index a.router-link-exact-active > article > h1 {
+    color: var(--foreground);
+}
+
+.frame-index a.router-link-exact-active > article > div {
+    cursor: default;
 }
 
 /* - FrameBatch */
