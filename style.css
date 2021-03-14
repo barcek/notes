@@ -352,6 +352,7 @@ header .theme-toggle {
     stroke-dashoffset: -12;
     fill: var(--background);
     transform: rotate(-45deg);
+    transition: 500ms ease;
 }
 
 header section::after {
