@@ -291,16 +291,79 @@ header svg {
 header a svg {
     height: 2rem;
     width: 2rem;
+    transition: 300ms ease;
+}
+
+header h1 {
+    position: relative;
+    padding: 0.3rem 0 0rem 0.5rem;
+    font-size: 1.5rem;
+    transition: 300ms ease;
+}
+
+header h1::after,
+header h1::after {
+    content: "";
+    position: absolute;
+    top: 2.2rem;
+    left: calc(0.5rem + 30%);
+    width: 30%;
+    height: 0.12rem;
+    background-color: var(--background);
+    border-radius: 20%;
+    transition: 100ms ease-in-out;
+}
+
+header a {
+    outline: none;
+}
+
+header a h1,
+header a:visited h1 {
+    color: var(--edge-lower);
+}
+
+header a:focus h1::after,
+header a:hover h1::after {
+    top: 2.2rem;
+    left: 0.5rem;
+    width: 90%;
+    background-color: var(--edge-lower);
+}
+
+header a:active svg {
+    stroke: var(--secondary);
+}
+
+header a:active h1 {
+    color: var(--secondary);
+}
+
+header a:active h1::after {
+    background-color: var(--secondary);
 }
 
 header .theme-toggle {
+    position: relative;
     height: 1.5rem;
     width: 1.5rem;
     stroke-width: 1.4;
     stroke-dasharray: 48;
     stroke-dashoffset: -12;
     fill: var(--background);
-    transition: 500ms ease;
+    transform: rotate(-45deg);
+}
+
+header section::after {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    right: 1.55rem;
+    width: 0.4rem;
+    height: 0.1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 100ms ease-in-out;
 }
 
 body.theme--dark .theme-toggle {
@@ -308,14 +371,16 @@ body.theme--dark .theme-toggle {
     fill: var(--edge-lower);
 }
 
-header h1 {
-    padding: 0.3rem 0 0rem 0.5rem;
-    font-size: 1.5rem;
+header section:focus-within::after,
+header section:hover::after {
+    right: 1.15rem;
+    width: 1.25rem;
+    height: 0.3rem;
+    background-color: var(--shadow);
 }
 
-header a h1,
-header a:visited h1 {
-    color: var(--edge-lower);
+.theme-toggle:focus {
+    outline: none;
 }
 
 /* - main */
@@ -392,7 +457,7 @@ body::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    transition: 150ms 100ms ease;
+    transition: 150ms ease;
 }
 
 /* - FrameInput */
@@ -405,7 +470,7 @@ body::before {
 .frame-input > input {
     width: calc(100% - 6.1rem);
     border-radius: 6px 3px 3px 6px;
-    transition: 150ms 100ms ease;
+    transition: 150ms ease;
 }
 
 .frame-input > input:focus {
@@ -467,6 +532,7 @@ body::before {
 .frame-entry .filter--dot {
     top: -4px;
     right: -4px;
+    transition: 150ms 100ms ease;
 }
 
 .frame-entry:focus-within {

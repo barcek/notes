@@ -27,7 +27,7 @@
 
     /* Elements */
 
-    var themeToggle = d.querySelector('header > .theme-toggle');
+    var themeToggle = d.querySelector('header .theme-toggle');
 
     /* Constants */
 
