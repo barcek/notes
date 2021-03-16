@@ -276,28 +276,28 @@ body {
 /* - header */
 
 header {
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 header svg {
     display: inline-block;
     stroke: var(--edge-lower);
-    stroke-width: 1.15;
+    stroke-width: 0.9;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
 }
 
 header a svg {
-    height: 2rem;
-    width: 2rem;
+    height: 1.9rem;
+    width: 1.9rem;
     transition: 300ms ease;
 }
 
 header h1 {
     position: relative;
-    padding: 0.3rem 0 0rem 0.5rem;
-    font-size: 1.5rem;
+    padding: 0.2rem 0 0rem 0.4rem;
+    font-size: 1.4rem;
     transition: 300ms ease;
 }
 
@@ -305,10 +305,10 @@ header h1::after,
 header h1::after {
     content: "";
     position: absolute;
-    top: 2.2rem;
-    left: calc(0.5rem + 30%);
+    top: 2rem;
+    left: calc(0.45rem + 30%);
     width: 30%;
-    height: 0.12rem;
+    height: 0.1rem;
     background-color: var(--background);
     border-radius: 20%;
     transition: 100ms ease-in-out;
@@ -325,8 +325,7 @@ header a:visited h1 {
 
 header a:focus h1::after,
 header a:hover h1::after {
-    top: 2.2rem;
-    left: 0.5rem;
+    left: 0.45rem;
     width: 90%;
     background-color: var(--edge-lower);
 }
@@ -345,9 +344,9 @@ header a:active h1::after {
 
 header .theme-toggle {
     position: relative;
+    top: 0.2rem;
     height: 1.5rem;
     width: 1.5rem;
-    stroke-width: 1.4;
     stroke-dasharray: 48;
     stroke-dashoffset: -12;
     fill: var(--background);
@@ -358,8 +357,8 @@ header .theme-toggle {
 header section::after {
     content: "";
     position: absolute;
-    top: 3rem;
-    right: 1.55rem;
+    top: 3.6rem;
+    right: 2.05rem;
     width: 0.4rem;
     height: 0.1rem;
     background-color: transparent;
@@ -374,7 +373,7 @@ body.theme--dark .theme-toggle {
 
 header section:focus-within::after,
 header section:hover::after {
-    right: 1.15rem;
+    right: 1.65rem;
     width: 1.25rem;
     height: 0.3rem;
     background-color: var(--shadow);
