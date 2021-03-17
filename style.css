@@ -215,6 +215,12 @@ a:visited {
     color: var(--secondary);
 }
 
+a:focus,
+a:hover {
+    outline: none;
+    text-decoration: underline;
+}
+
 li {
     list-style: square;
 }
@@ -305,17 +311,22 @@ header h1::after,
 header h1::after {
     content: "";
     position: absolute;
-    top: 2rem;
-    left: calc(0.45rem + 30%);
-    width: 30%;
-    height: 0.1rem;
-    background-color: var(--background);
-    border-radius: 20%;
+    top: 2.1rem;
+    left: -1.9rem;
+    width: 1.65rem;
+    height: 0.4rem;
+    background-color: var(--far);
+    border-radius: 50%;
     transition: 100ms ease-in-out;
 }
 
 header a {
     outline: none;
+}
+
+header a:focus,
+header a:hover {
+    text-decoration: none;
 }
 
 header a h1,
@@ -325,9 +336,11 @@ header a:visited h1 {
 
 header a:focus h1::after,
 header a:hover h1::after {
-    left: 0.45rem;
-    width: 90%;
-    background-color: var(--edge-lower);
+    top: 2.05rem;
+    left: -1.7rem;
+    width: 1.25rem;
+    height: 0.3rem;
+    background-color: var(--shadow);
 }
 
 header a:active svg {
@@ -357,11 +370,11 @@ header .theme-toggle {
 header section::after {
     content: "";
     position: absolute;
-    top: 3.6rem;
-    right: 2.05rem;
-    width: 0.4rem;
-    height: 0.1rem;
-    background-color: transparent;
+    top: 3.55rem;
+    right: 1.45rem;
+    width: 1.65rem;
+    height: 0.4rem;
+    background-color: var(--far);
     border-radius: 50%;
     transition: 100ms ease-in-out;
 }
@@ -373,6 +386,7 @@ body.theme--dark .theme-toggle {
 
 header section:focus-within::after,
 header section:hover::after {
+    top: 3.5rem;
     right: 1.65rem;
     width: 1.25rem;
     height: 0.3rem;
@@ -504,7 +518,7 @@ body::before {
 }
 
 .frame-input > button:last-of-type {
-    border-radius: 3px 3px 6px 3px;
+    border-radius: 3px 6px 6px 3px;
 }
 
 .frame-input > button > svg {
@@ -525,7 +539,7 @@ body::before {
     position: relative;
     height: max-content;
     padding: 1.5rem;
-    border-radius: 6px 6px 3px 3px;
+    border-radius: 6px 6px 6px 6px;
     transition: 150ms 100ms ease;
 }
 
@@ -536,7 +550,7 @@ body::before {
 }
 
 .frame-entry:focus-within {
-    border-radius: 6px 24px 3px 3px;
+    border-radius: 6px 24px 6px 6px;
 }
 
 .frame-entry:focus-within .filter--dot {
@@ -592,7 +606,7 @@ body::before {
 .frame-index > p,
 .frame-index > ul {
     padding: 1.25rem;
-    border-radius: 6px 3px 3px 18px;
+    border-radius: 6px 6px 6px 18px;
 }
 
 .frame-index > ul {
@@ -612,6 +626,8 @@ body::before {
 .frame-index > ul > li:last-child {
     padding: 0.25rem 0 0 0;
 }
+
+/* - FrameIndexEntry */
 
 .frame-index-entry {
     display: inline-block;
@@ -688,10 +704,12 @@ body::before {
     cursor: default;
 }
 
+.frame-index a:focus > article > h1,
 .frame-index a:hover > article > h1 {
     text-decoration: underline;
 }
 
+.frame-index a.router-link-exact-active:focus > article > h1,
 .frame-index a.router-link-exact-active:hover > article > h1 {
     text-decoration: none;
 }
