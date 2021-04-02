@@ -288,7 +288,7 @@ header {
 header svg {
     display: inline-block;
     stroke: var(--edge-lower);
-    stroke-width: 0.9;
+    stroke-width: 0.8;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
