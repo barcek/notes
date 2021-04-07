@@ -90,7 +90,7 @@
 
 .border--thin {
     border: 1px solid var(--edge-upper);
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 /* Visibility classes */
@@ -237,7 +237,7 @@ button {
     font-family: inherit;
     font-size: inherit;
     border: 1px solid var(--edge-upper);
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 input,
@@ -288,7 +288,7 @@ header {
 header svg {
     display: inline-block;
     stroke: var(--edge-lower);
-    stroke-width: 0.8;
+    stroke-width: 0.7;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
@@ -439,7 +439,7 @@ body::before {
     width: 2rem;
     height: 2rem;
     background: var(--edge-upper);
-    border-radius: 3px;
+    border-radius: 6px;
     animation: pulse 1500ms ease-out infinite;
 }
 
@@ -482,14 +482,14 @@ body::before {
 }
 
 .frame-input > input {
-    width: calc(100% - 6.1rem);
-    border-radius: 6px 3px 3px 6px;
+    width: calc(100% - 5.9rem);
+    border-radius: 6px 4px 4px 6px;
     transition: 150ms ease;
 }
 
 .frame-input > input:focus {
     outline: none;
-    border-radius: 12px 3px 3px 6px;
+    border-radius: 12px 4px 4px 6px;
 }
 
 .frame-input .filter--dot {
@@ -508,7 +508,7 @@ body::before {
 .frame-input > button {
     width: 2.3rem;
     height: 2.3rem;
-    margin-left: 0.75rem;
+    margin-left: 0.65rem;
     padding: 0.55rem;
     font-size: 1rem;
 }
@@ -518,7 +518,7 @@ body::before {
 }
 
 .frame-input > button:last-of-type {
-    border-radius: 3px 6px 6px 3px;
+    border-radius: 4px 6px 6px 4px;
 }
 
 .frame-input > button > svg {
@@ -736,10 +736,10 @@ body::before {
 }
 
 .frame-batch li svg {
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.6rem;
+    height: 0.6rem;
     margin-left: 0.25rem;
-    stroke-width: 1;
+    stroke-width: 1.1;
     stroke-linecap: round;
     stroke: var(--edge-lower);
     pointer-events: none;
@@ -778,7 +778,7 @@ body::before {
     }
 
     .frame-input > button:last-of-type {
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 4px 4px 4px 4px;
     }
 
     .frame-index {
