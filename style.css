@@ -232,7 +232,9 @@ label {
 
 input,
 textarea,
-button {
+button,
+.toggle,
+.toggle > div {
     padding: 0.5rem;
     font-family: inherit;
     font-size: inherit;
@@ -241,7 +243,8 @@ button {
 }
 
 input,
-textarea {
+textarea,
+.toggle {
     background: var(--max);
     color: inherit;
     border-top-color: var(--edge-lower);
@@ -249,12 +252,28 @@ textarea {
     box-shadow: inset 1px 1px 2px var(--shadow);
 }
 
-button {
+button,
+.toggle > div {
     background-color: inherit;
     color: inherit;
     border-right-color: var(--edge-lower);
     border-bottom-color: var(--edge-lower);
     box-shadow: 1px 1px 2px var(--shadow);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px var(--secondary), 1px 1px 2px var(--shadow);
+}
+
+button[aria-pressed="true"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--secondary), inset 1px 1px 2px var(--shadow);
+}
+
+button:focus,
+button:hover {
+    color: var(--secondary);
 }
 
 button:active,
@@ -359,42 +378,40 @@ header .theme-toggle {
     position: relative;
     top: 0.2rem;
     height: 1.5rem;
-    width: 1.5rem;
-    stroke-dasharray: 48;
-    stroke-dashoffset: -12;
+    width: 2.75rem;
+    padding: 0.1rem;
+    outline: none;
+}
+
+header > .theme-toggle > input {
+    display: none;
+}
+
+header > .theme-toggle > div {
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 0;
+    background-color: var(--background);
+    transform: translateX(0rem);
+    transition: 300ms ease;
+}
+
+header > .theme-toggle > div > svg {
+    stroke: var(--edge-lower);
+    stroke-width: 1.25;
     fill: var(--background);
     transform: rotate(-45deg);
-    transition: 500ms ease;
+    transition: 300ms ease-in-out;
 }
 
-header section::after {
-    content: "";
-    position: absolute;
-    top: 3.55rem;
-    right: 1.45rem;
-    width: 1.65rem;
-    height: 0.4rem;
-    background-color: var(--far);
-    border-radius: 50%;
-    transition: 100ms ease-in-out;
+header > .theme-toggle > input:checked + div {
+    transform: translateX(1.15rem);
 }
 
-body.theme--dark .theme-toggle {
-    stroke-dashoffset: 4;
-    fill: var(--edge-lower);
-}
-
-header section:focus-within::after,
-header section:hover::after {
-    top: 3.5rem;
-    right: 1.65rem;
-    width: 1.25rem;
-    height: 0.3rem;
-    background-color: var(--shadow);
-}
-
-.theme-toggle:focus {
-    outline: none;
+header .theme-toggle:focus-within > div > svg,
+header .theme-toggle:hover > div > svg {
+    stroke: none;
+    fill: var(--secondary);
 }
 
 /* - main */
@@ -487,7 +504,8 @@ body::before {
     transition: 150ms ease;
 }
 
-.frame-input > input:focus {
+.frame-input > input:focus,
+.frame-input > input:hover {
     outline: none;
     border-radius: 12px 4px 4px 6px;
 }
@@ -497,7 +515,8 @@ body::before {
     left: -8px;
 }
 
-.frame-input > input:focus ~ .filter--dot {
+.frame-input > input:focus ~ .filter--dot,
+.frame-input > input:hover ~ .filter--dot {
     top: -20px;
     left: -20px;
     width: 20px;
@@ -529,6 +548,8 @@ body::before {
     stroke: var(--edge-lower);
 }
 
+.frame-input > button:focus > svg,
+.frame-input > button:hover > svg,
 .frame-input > button:active > svg {
     stroke: var(--secondary);
 }

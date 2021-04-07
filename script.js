@@ -36,7 +36,12 @@
 
     /* Handlers */
 
-    function handleThemeToggle() {
+    function handleThemeToggle(e) {
+
+        e.preventDefault();
+        const checkbox = themeToggle.firstElementChild;
+        checkbox.checked = checkbox.checked === true ? false : true;
+
         d.body.classList.toggle(darkThemeClass);
         var activeTheme = d.body.classList.contains(darkThemeClass) ? "dark" : "light";
         saveSetting('theme', activeTheme);
@@ -47,8 +52,7 @@
     themeToggle.addEventListener('click', handleThemeToggle);
     themeToggle.addEventListener('keydown', function(e) {
         if (e.keyCode === 13 || e.keyCode === 32) {
-            e.preventDefault();
-            handleThemeToggle();
+            handleThemeToggle(e);
         };
     });
 
