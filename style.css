@@ -610,21 +610,11 @@ body::before {
 }
 
 .frame-index > ul {
-    padding-left: 1.25rem;
+    padding: 1.25rem 0;
 }
 
 .frame-index > ul > li {
-    padding: 0.25rem 0;
     max-height: 7.5rem;
-    overflow: hidden;
-}
-
-.frame-index > ul > li:first-child {
-    padding: 0 0 0.25rem 0;
-}
-
-.frame-index > ul > li:last-child {
-    padding: 0.25rem 0 0 0;
 }
 
 /* - FrameIndexEntry */
@@ -632,15 +622,20 @@ body::before {
 .frame-index-entry {
     display: inline-block;
     position: relative;
+    padding: 0.75rem;
 }
 
 .frame-index-entry > div {
     position: absolute;
     top: 0;
-    width: 100%;
+    left: -5%;
+    width: 110%;
     height: 7.5rem;
-    background-image: linear-gradient(180deg, transparent 50%, var(--background) 95%);
     z-index: 1;
+}
+
+.frame-index li:last-child .frame-index-entry > div {
+    background-image: linear-gradient(180deg, transparent 50%, var(--background) 95%);
 }
 
 .frame-index-entry > h1 {
@@ -702,6 +697,27 @@ body::before {
 
 .frame-index a.router-link-exact-active > article > div {
     cursor: default;
+}
+
+.frame-index li {
+    position: relative;
+    perspective: 250rem;
+    overflow-y: hidden;
+}
+
+.frame-index a {
+    padding: 5%;
+}
+
+.frame-index a > article {
+    width: 90%;
+    transform-origin: 50% 10rem;
+    transition: 200ms;
+}
+
+.frame-index a:focus > article,
+.frame-index a:hover > article {
+    transform: rotateX(-10deg);
 }
 
 .frame-index a:focus > article > h1,
@@ -809,6 +825,21 @@ body::before {
         border-radius: 6px 6px 6px 18px;
     }
 
+    .frame-index > ul {
+        padding: 1.75rem 0;
+    }
+
+    .frame-index > ul > li {
+        max-height: 10rem;
+    }
+
+    .frame-index-entry > div {
+        height: 10rem;
+    }
+
+    .frame-index a > article {
+        transform-origin: 50% 12.5rem;
+    }
 }
 
 @media screen and (min-width: calc(950px + 6rem)) {
