@@ -177,7 +177,7 @@ code.text--block > span.text--block {
     color: var(--secondary-earth);
 }
 
-.code--op, .code--fl {
+.code--op, .code--fl, .code--cm {
     color: var(--primary-earth);
 }
 
@@ -307,7 +307,7 @@ body {
 /* - header */
 
 header {
-    padding: 1.5rem;
+    padding: 1.75rem 1.75rem 2rem 2rem;
 }
 
 header svg {
@@ -671,7 +671,12 @@ body::before {
     z-index: 1;
 }
 
+.frame-index > ul > li:last-child {
+    max-height: 9.25rem;
+}
+
 .frame-index li:last-child .frame-index-entry > div {
+    height: 9.25rem;
     background-image: linear-gradient(180deg, transparent 50%, var(--background) 95%);
 }
 
@@ -820,6 +825,10 @@ body::before {
 
 @media screen and (min-width: calc(700px + 6rem)) {
 
+    header {
+        padding: 2rem 2rem 2.25rem 2.25rem;
+    }
+
     body::before {
         content: "2-column";
         display: none;
@@ -828,6 +837,10 @@ body::before {
     .frame {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: max-content 1fr;
+    }
+
+    .frame-entry {
+        max-width: 45vw;
     }
 
     .frame-input > button:last-of-type {
@@ -874,12 +887,24 @@ body::before {
         height: 10rem;
     }
 
+    .frame-index > ul > li:last-child {
+        max-height: 11rem;
+    }
+
+    .frame-index > ul > li:last-child .frame-index-entry > div {
+        height: 11rem;
+    }
+
     .frame-index a > article {
         transform-origin: 50% 12.5rem;
     }
 }
 
 @media screen and (min-width: calc(950px + 6rem)) {
+
+    header {
+        padding: 2.25rem 2.25rem 2.5rem 2.5rem;
+    }
 
     .frame {
         grid-template-columns: 475px 475px;
