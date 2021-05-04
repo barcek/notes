@@ -1,9 +1,5 @@
 # notes
 
-Things I've learned.
-
-Subjects so far include the static file, JavaScript, especially Node.js, Docker, the environment and the shell.
-
-Currently hosted [here](https://barcek.github.io/notes), with more notes to follow.
+Some of the things I've learned, with subjects so far including JavaScript, Docker and the shell. Currently hosted [here](https://barcek.github.io/notes).
 
 Shares code with [rhizo](https://github.com/barcek/rhizo), components and supplementary files for a single-page app, written with Vue.js in TypeScript.
