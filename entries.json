@@ -1,7 +1,7 @@
 [
     {
-    	"name": "Read the notes",
-    	"meta": "start",
+        "name": "",
+        "meta": "start",
         "body": "<p>Subjects so far include the <t>static file</t>, <t>JS</t>, especially <t>Node.js</t>, <t>Docker</t>, the <t>environment</t> and the <t>shell</t>.</p><p>More to follow.</p><p>The raw <t>JSON</t> for these notes can be accessed directly <b><a href=\"https://raw.githubusercontent.com/barcek/notes/master/entries.json\">here</a></b> or downloaded using a <t>CLI</t> tool like <code>curl</code>.</p><code class=\"text--block\"><span class=\"text--block text--vsmall\">shell (Unix-like)</span><span class=\"code--kw\">curl</span> <span class=\"code--fl\">-O</span> <span class=\"code--id\">https://raw.githubusercontent.com/barcek/notes/master/entries.json</span></code><p>This command creates a file named <span class=\"text--mono\">entries.json</span> in the current <t>directory</t>.</p>"
     },
 
